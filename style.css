@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #fcf574;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter {
+  position: relative;
+  width: 200px;
+  height: 120px;
+  background: #fff0d9;
+  border: 2px solid #c89b68;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  transition: all 5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.letter.opened {
+  width: 400px;
+  height: 300px;
+}
+
+.message {
+  opacity: 0;
+  text-align: center;
+  transition: opacity 5s ease;
+  padding: 20px;
+  font-size: 1.2em;
+  color: #5a3e2b;
+}
+
+.letter.opened .message {
+  opacity: 1;
+}
+
+.open-button {
+  position: absolute;
+  bottom: 10px;
+  background: #c89b68;
+  color: white;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background 0.3s;
+}
+
+.open-button:hover {
+  background: #a07544;
+}
+
+.image {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  transition: transform 5s ease, opacity 1s ease;
+  z-index: 1;
+  border-radius: 8px;
+  opacity: 0;
+}
+
+.image1 { top: 10%; left: 10%; }
+.image2 { top: 10%; right: 10%; }
+.image3 { bottom: 20%; left: 10%; }
+.image4 { bottom: 20%; right: 10%; }
+
+.image.show {
+  opacity: 1;
+  transform: scale(2.5) translate(20px, 20px);
+}
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 100;
+}
